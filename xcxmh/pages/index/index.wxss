@@ -1,0 +1,18 @@
+.img {
+  width: 94%;
+  height: 350rpx;
+}
+
+.view {
+  text-align: center;  
+}
+
+.viewtext {
+  width: 94%;
+  margin: 0rpx 20rpx 0rpx 20rpx;
+  font-size: 38rpx;
+}
+
+.viewbottom{
+  margin-bottom: 30rpx;
+}
