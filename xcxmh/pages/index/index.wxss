@@ -13,6 +13,13 @@
   font-size: 38rpx;
 }
 
+.viewtitle {
+  width: 94%;
+  margin: 0rpx 20rpx 0rpx 20rpx;
+  font-size: 34rpx;
+  font-weight: bold;
+}
+
 .viewbottom{
   margin-bottom: 30rpx;
 }
