@@ -18,7 +18,17 @@
   width: 100%;
   font-size: 40rpx;
   font-family: YouYuan;
-  padding: 30rpx 10rpx 30rpx 10rpx;
+  padding: 30rpx 30rpx 30rpx 30rpx;
+}
+
+.view4 {
+  width: 100%;
+  background-color: #eee;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  text-align: center;
+  font-size: 40rpx;
+  font-family: YouYuan;
 }
 
 .viewtext {
@@ -56,12 +66,8 @@
   margin: 0rpx 100rpx 0rpx 100rpx;
 }
 
-.line-css {
-
-    height: {{线的高度，如：1px}};
-
-    background: {{线的颜色， 如： #888}};
-
-    margin: {{如果需要的话设置，线距离两端的距离， 如： 0 20rpx}};
-
+.line {
+  height: 3rpx;
+  background: #eee;
+  margin: 0rpx 20rpx;
 }

@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/dir/dir",
-    "pages/details/details"
+    "pages/details/details",
+    "pages/index/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",

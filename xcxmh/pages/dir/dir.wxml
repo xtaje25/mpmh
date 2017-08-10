@@ -14,8 +14,12 @@
 </view>
 
 <block wx:for="{{list}}" wx:for-item="item" wx:key="item.f_sort">
-  <view class="">
-  第{{item.f_sort}}章 {{item.f_name}}
+  <view class="line"></view>
+  <view class="view3">
+   <navigator url="/pages/index/index">第{{item.f_sort}}章 {{item.f_name}}</navigator> 
   </view>
 </block>
 
+<view class="view4">
+  没有更多了呦~
+</view>

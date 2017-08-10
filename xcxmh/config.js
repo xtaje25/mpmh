@@ -2,7 +2,7 @@
  * 小程序配置文件
  */
 
-var host = "localhost:56030"
+var host = "www.mh.com"
 
 var protocol = "http://";
 
