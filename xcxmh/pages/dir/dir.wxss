@@ -1,0 +1,67 @@
+.img {
+  width: 100%;
+  height: 600rpx;
+}
+
+.view {
+  width: 100%;
+  height: 600rpx;
+}
+
+.view2 {
+  width: 100%;
+  background-color: #eee;
+  padding: 30rpx 0rpx 30rpx 0rpx;
+}
+
+.view3 {
+  width: 100%;
+  font-size: 40rpx;
+  font-family: YouYuan;
+  padding: 30rpx 10rpx 30rpx 10rpx;
+}
+
+.viewtext {
+  position: absolute;
+  left: 10rpx;
+  top: 400rpx;
+  color: white;
+  font-size: 60rpx;
+  font-family: YouYuan;
+}
+
+.viewtext1 {
+  position: absolute;
+  left: 10rpx;
+  top: 482rpx;
+  color: white;
+  font-size: 45rpx;
+  font-family: YouYuan;
+}
+
+.viewtext2 {
+  position: absolute;
+  left: 10rpx;
+  top: 550rpx;
+  color: white;
+  font-size: 35rpx;
+  font-family: YouYuan;
+}
+
+.button {
+  border-radius: 50rpx;
+  background-color: orange;
+  color: white;
+  font-family: YouYuan;
+  margin: 0rpx 100rpx 0rpx 100rpx;
+}
+
+.line-css {
+
+    height: {{线的高度，如：1px}};
+
+    background: {{线的颜色， 如： #888}};
+
+    margin: {{如果需要的话设置，线距离两端的距离， 如： 0 20rpx}};
+
+}

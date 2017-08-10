@@ -1,0 +1,21 @@
+<view class="view">
+  <view class="viewtext">百思不得姐</view>
+  <view class="viewtext1">史上最弱恶魔拯救地域。。</view>
+  <view class="viewtext2">更至32章</view>
+  <image class="img" src="http://7xiyf4.com1.z0.glb.clouddn.com/MH/3/1/1502100579345.jpg-1x1.jpg" mode="aspectFill"></image>
+</view>
+
+<view class="view2">
+  <button class="button">续看第一章</button>
+</view>
+
+<view class="view3">
+  章节
+</view>
+
+<block wx:for="{{list}}" wx:for-item="item" wx:key="item.f_sort">
+  <view class="">
+  第{{item.f_sort}}章 {{item.f_name}}
+  </view>
+</block>
+

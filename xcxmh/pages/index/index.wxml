@@ -1,47 +1,13 @@
-<view class="view">
-  <image class="img" src="http://7xiyf4.com1.z0.glb.clouddn.com/1493028249000-1x1.jpg" mode="aspectFill"></image>
-</view>
-<view class="viewbottom">
-  <view class="viewtitle">
-    漫画标题
+<block wx:for="{{list}}" wx:for-item="item" wx:key="*item">
+  <view class="view">
+    <image class="img" src="{{item.f_logo}}" mode="aspectFill"></image>
   </view>
-  <view class="viewtext">
-    漫画简介漫画简介漫画简介漫画简介。。。
+  <view class="viewbottom">
+    <view class="viewtitle">
+      {{item.f_catalog}}
+    </view>
+    <view class="viewtext">
+      简介：{{item.f_about}}
+    </view>
   </view>
-</view>
-
-<view class="view">
-  <image class="img" src="http://7xiyf4.com1.z0.glb.clouddn.com/1493028249000-1x1.jpg" mode="aspectFill"></image>
-</view>
-<view class="viewbottom">
-  <view class="viewtitle">
-    漫画标题
-  </view>
-  <view class="viewtext">
-    漫画简介漫画简介漫画简介漫画简介。。。
-  </view>
-</view>
-
-<view class="view">
-  <image class="img" src="http://7xiyf4.com1.z0.glb.clouddn.com/1493028249000-1x1.jpg" mode="aspectFill"></image>
-</view>
-<view class="viewbottom">
-  <view class="viewtitle">
-    漫画标题
-  </view>
-  <view class="viewtext">
-    漫画简介漫画简介漫画简介漫画简介。。。
-  </view>
-</view>
-
-<view class="view">
-  <image class="img" src="http://7xiyf4.com1.z0.glb.clouddn.com/1493028249000-1x1.jpg" mode="aspectFill"></image>
-</view>
-<view class="viewbottom">
-  <view class="viewtitle">
-    漫画标题
-  </view>
-  <view class="viewtext">
-    漫画简介漫画简介漫画简介漫画简介。。。
-  </view>
-</view>
+</block>

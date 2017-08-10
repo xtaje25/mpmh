@@ -1,24 +1,35 @@
+const config = require('../../config')
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+    list:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    console.log(this.data.list)
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+    var that = this;
+    wx.request({
+      url: config.imgUrl,
+      success: function (res) {
+        if (res.data.status == 1) {
+          that.setData({ list: res.data.data })
+          console.log(res.data.data)
+        }
+      }
+    })
   },
 
   /**
