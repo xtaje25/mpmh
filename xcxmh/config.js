@@ -2,7 +2,7 @@
  * 小程序配置文件
  */
 
-var host = "www.mh.com"
+var host = "localhost:56030"
 
 var protocol = "http://";
 
@@ -17,8 +17,7 @@ var config = {
 
   imgUrl: protocol + host + '/api/GetMHDir',
 
-  // 用code换取openId
-  openIdUrl: protocol + host + '/openid',
+  mhInfoUrl: protocol + host + '/api/GetInfo',
 
   // 测试的信道服务接口
   tunnelUrl: protocol + host + '/tunnel',

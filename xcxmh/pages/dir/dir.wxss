@@ -15,9 +15,11 @@
 }
 
 .view3 {
-  width: 100%;
+  width: 94%;
   font-size: 40rpx;
   font-family: YouYuan;
+  white-space: nowrap;
+  overflow: hidden;
   padding: 30rpx 30rpx 30rpx 30rpx;
 }
 

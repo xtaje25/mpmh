@@ -1,12 +1,14 @@
 <view class="view">
-  <view class="viewtext">百思不得姐</view>
-  <view class="viewtext1">史上最弱恶魔拯救地域。。</view>
-  <view class="viewtext2">更至32章</view>
-  <image class="img" src="http://7xiyf4.com1.z0.glb.clouddn.com/MH/3/1/1502100579345.jpg-1x1.jpg" mode="aspectFill"></image>
+  <view class="viewtext">{{info.f_catalog}}</view>
+  <view class="viewtext1">{{info.f_about}}</view>
+  <view class="viewtext2">
+    <block wx:if="{{info.sort>0}}">更新至第{{info.sort}}章</block>
+  </view>
+  <image class="img" src="{{info.f_logo}}" mode="aspectFill"></image>
 </view>
 
-<view class="view2">
-  <button class="button">续看第一章</button>
+<view wx:if="{{sort>0}}" class="view2">
+  <button class="button">续看第{{sort}}章</button>
 </view>
 
 <view class="view3">
@@ -15,11 +17,13 @@
 
 <block wx:for="{{list}}" wx:for-item="item" wx:key="item.f_sort">
   <view class="line"></view>
-  <view class="view3">
-   <navigator url="/pages/index/index">第{{item.f_sort}}章 {{item.f_name}}</navigator> 
-  </view>
+  <navigator url="/pages/details/details?id={{item.f_sort}}" open-type="navigate">
+    <view class="view3">
+      第{{item.f_sort}}章 {{item.f_name}}
+    </view>
+  </navigator>
 </block>
 
-<view class="view4">
+<view wx:if="{{list.length>4}}" class="view4">
   没有更多了呦~
 </view>
