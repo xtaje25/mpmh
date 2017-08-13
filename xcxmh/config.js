@@ -2,9 +2,9 @@
  * 小程序配置文件
  */
 
-var host = "localhost:56030"
+var host = "www.tzslxd.com"
 
-var protocol = "http://";
+var protocol = "https://";
 
 var config = {
 
@@ -13,14 +13,17 @@ var config = {
 
   protocol,
 
+  // 漫画目录 目前就一个漫画暂时没用
   mhCatalogUrl: protocol + host + '/api/index',
 
-  imgUrl: protocol + host + '/api/GetMHDir',
+  // 根据漫画id查询所有满章节
+  imgListUrl: protocol + host + '/api/GetMHDir',
 
+  // 根据漫画id查询漫画基本信息
   mhInfoUrl: protocol + host + '/api/GetInfo',
 
-  // 测试的信道服务接口
-  tunnelUrl: protocol + host + '/tunnel',
+  // 根据漫画id和章节id查询章节详情
+  imgInfolUrl: protocol + host + '/api/GetImgInfo',
 
   // 生成支付订单的接口
   paymentUrl: protocol + host + '/payment',

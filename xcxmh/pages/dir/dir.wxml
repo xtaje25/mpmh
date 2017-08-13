@@ -8,7 +8,7 @@
 </view>
 
 <view wx:if="{{sort>0}}" class="view2">
-  <button class="button">续看第{{sort}}章</button>
+  <button class="button" bindtap="showimg" data-id="{{info.f_id}}" data-st="{{sort}}">续看第{{sort}}章</button>
 </view>
 
 <view class="view3">
@@ -17,7 +17,7 @@
 
 <block wx:for="{{list}}" wx:for-item="item" wx:key="item.f_sort">
   <view class="line"></view>
-  <navigator url="/pages/details/details?id={{item.f_sort}}" open-type="navigate">
+  <navigator url="/pages/details/details?st={{item.f_sort}}&id={{item.f_mhid}}" open-type="navigate">
     <view class="view3">
       第{{item.f_sort}}章 {{item.f_name}}
     </view>

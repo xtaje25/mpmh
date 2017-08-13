@@ -8,22 +8,15 @@ Page({
   data: {
     list: [],
     info: {},
-    sort: 0
+    sort: 0,
+    mhid: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log("onLoad..")
-    var that = this;
-    wx.getStorage({
-      key: 'sort',
-      success: function (res) {
-        console.log("onLoad.." + res.data)
-        that.setData({ sort: res.data })
-      }
-    })
+
   },
 
   /**
@@ -32,7 +25,7 @@ Page({
   onReady: function () {
     var that = this;
     wx.request({
-      url: config.imgUrl,
+      url: config.imgListUrl,
       success: function (res) {
         if (res.data.status == 1) {
           that.setData({ list: res.data.data })
@@ -54,7 +47,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this;
+    wx.getStorage({
+      key: 'sort',
+      success: function (res) {
+        that.setData({ sort: res.data })
+      }
+    })
   },
 
   /**
@@ -90,5 +89,13 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  showimg: function (e) {
+    var id = e.currentTarget.dataset.id
+    var st = e.currentTarget.dataset.st
+    wx.navigateTo({
+      url: "/pages/details/details?id=" + id + "&st=" + st,
+    })
   }
 })

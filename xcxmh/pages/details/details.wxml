@@ -1,3 +1,30 @@
 <view>
   <image class="img" src="{{src}}" mode="widthFix"></image>
 </view>
+
+<view>
+  <!--<block>
+    <navigator url="/pages/details/details?id={{mhid}}&st={{previous}}">
+      <button class="buttonleft">上一章</button>
+    </navigator>
+  </block>
+  <block>
+    <navigator url="/pages/details/details?id={{mhid}}&st={{next}}">
+      <button class="buttonright">下一章</button>
+    </navigator>
+  </block>-->
+
+  <block wx:if="{{previous>0}}">
+    <button class="buttonleft" bindtap="showimg" data-id="{{mhid}}" data-st="{{previous}}">上一章</button>
+  </block>
+  <block wx:else>
+    <button class="buttonleft disabled">上一章</button>
+  </block>
+
+  <block wx:if="{{next>0}}">
+    <button class="buttonright" bindtap="showimg" data-id="{{mhid}}" data-st="{{next}}">下一章</button>
+  </block>
+  <block wx:else>
+    <button class="buttonleft disabled">下一章</button>
+  </block>
+</view>
