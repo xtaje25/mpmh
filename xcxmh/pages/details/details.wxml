@@ -1,19 +1,8 @@
-<view>
+<!--<view>
   <image class="img" src="{{src}}" mode="widthFix"></image>
-</view>
+</view>-->
 
-<view>
-  <!--<block>
-    <navigator url="/pages/details/details?id={{mhid}}&st={{previous}}">
-      <button class="buttonleft">上一章</button>
-    </navigator>
-  </block>
-  <block>
-    <navigator url="/pages/details/details?id={{mhid}}&st={{next}}">
-      <button class="buttonright">下一章</button>
-    </navigator>
-  </block>-->
-
+<!--<view>
   <block wx:if="{{previous>0}}">
     <button class="buttonleft" bindtap="showimg" data-id="{{mhid}}" data-st="{{previous}}">上一章</button>
   </block>
@@ -27,4 +16,10 @@
   <block wx:else>
     <button class="buttonleft disabled">下一章</button>
   </block>
-</view>
+</view>-->
+
+<scroll-view scroll-y style="height:{{screenHeight}}px;" bindscrolltoupper="upper" bindscrolltolower="lower" upper-threshold="50" lower-threshold="50">
+  <block wx:for="{{list}}" wx:for-item="item" wx:key="item.f_sort">
+    <image class="img" src="{{item.src}}" mode="widthFix"></image>
+  </block>
+</scroll-view>

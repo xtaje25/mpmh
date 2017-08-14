@@ -2,9 +2,9 @@
  * 小程序配置文件
  */
 
-var host = "www.tzslxd.com"
+var host = "localhost:56030"
 
-var protocol = "https://";
+var protocol = "http://";
 
 var config = {
 
