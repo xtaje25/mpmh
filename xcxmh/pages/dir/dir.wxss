@@ -3,6 +3,13 @@
   height: 600rpx;
 }
 
+.img2 {
+  width: 36rpx;
+  height: 34rpx;
+  float: right;
+  margin: 0rpx 50rpx 0rpx 0rpx;
+}
+
 .view {
   width: 100%;
   height: 600rpx;
@@ -10,14 +17,15 @@
 
 .view2 {
   width: 100%;
-  background-color: #eee;
-  padding: 30rpx 0rpx 30rpx 0rpx;
+  height: 86rpx;
+  background-color: #f3f3f3;
+  padding: 20rpx 0rpx 20rpx 0rpx;
 }
 
 .view3 {
   width: 94%;
-  font-size: 40rpx;
-  font-family: YouYuan;
+  font-size: 28rpx;
+  font-family: MicrosoftYaHei;
   white-space: nowrap;
   overflow: hidden;
   padding: 30rpx 30rpx 30rpx 30rpx;
@@ -25,12 +33,32 @@
 
 .view4 {
   width: 100%;
-  background-color: #eee;
+  background-color: #f3f3f3;
   padding-top: 30rpx;
   padding-bottom: 30rpx;
   text-align: center;
-  font-size: 40rpx;
-  font-family: YouYuan;
+  color: #ccc;
+  font-size: 26rpx;
+  font-family: JLinXin;
+}
+
+.view5 {
+  width: 94%;
+  font-size: 28rpx;
+  color: #f6a623;
+  font-family: MicrosoftYaHei;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 30rpx 30rpx 30rpx 30rpx;
+}
+
+.view6 {
+  width: 94%;
+  font-size: 32rpx;
+  font-family: MicrosoftYaHei;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 30rpx 30rpx 30rpx 30rpx;
 }
 
 .viewtext {
@@ -38,8 +66,8 @@
   left: 10rpx;
   top: 400rpx;
   color: white;
-  font-size: 60rpx;
-  font-family: YouYuan;
+  font-size: 36rpx;
+  font-family: MicrosoftYaHei;
 }
 
 .viewtext1 {
@@ -47,8 +75,8 @@
   left: 10rpx;
   top: 482rpx;
   color: white;
-  font-size: 45rpx;
-  font-family: YouYuan;
+  font-size: 28rpx;
+  font-family: MicrosoftYaHei;
 }
 
 .viewtext2 {
@@ -56,16 +84,34 @@
   left: 10rpx;
   top: 550rpx;
   color: white;
-  font-size: 35rpx;
-  font-family: YouYuan;
+  font-size: 24rpx;
+  font-family: MicrosoftYaHei;
 }
 
 .button {
-  border-radius: 50rpx;
-  background-color: orange;
+  border-radius: 100px;
+  background-color: #f6a623;
   color: white;
-  font-family: YouYuan;
-  margin: 0rpx 100rpx 0rpx 100rpx;
+  text-align: center;
+  font-family: MicrosoftYaHei;
+  width: 68%;
+  height: 46px;
+  float: right;
+  margin: 0px 25px 0px 0px;
+}
+
+.button2 {
+  border-radius: 100px;
+  background-color: #5cc017;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAAqCAYAAAAqAaJlAAAAAXNSR0IArs4c6QAABSNJREFUWAnFmVtoFUcYx3OiMV4j2CpaY70rVrEqFhVBCiJq2zz1TSqIgqgv1SKWgkKkeEMtlGJTiheEPpSqWJU+9aG1VCPFSrzSKqiobSxqEq+Jt8Tf/+TMOrvZObt7sqd+8MvuXPab/87MNzNnkykJsba2tgqy+0NpSLGy2qA+k8k8dJTnzca/fKuN53AdP7pGWsaugZPRpBfCu1AJXcBlpylYAxdprNVVKZhPG2PI+xLGwjPYBTX4uMc1nuGkCmrhLjyFKGuhwjroE6+F9lrUXwm3QdYKTVADQ8DXeUG/2WGm0iwKNsE7oOHpClFWToWekLeBECdq0/jXs31Bo/kNTEKLKSPpt1IKJU7DqSkQHHYN71MHZ8g/DI8gltGWXrAbBF+wF3mzYTfMy9Xj1m8ZCj4g61sYZBU95n4/HIIGUEAF7RoZCg7VDTV8S9Q4mAlTYQSoU1zxoECrB43yXnz7AxiHG+A+GNN8XQ+V0B3KHAR7B//tRv1uMAd2wiVogIfwBDRP85nKVX8bDDA+s1cyvoNmMPYLN8PAKcbnIJDgucmwB67DIyjU7vHgDzAOsrGlyax5ZAs7TrqBIQgb+oC0l0kcys8SWAHDQcHXGdMqUwWD4WP812UVBzxqDiYVquHaCuvgLeisUFxkrTt/tUIthwrnMpGtGuMPb6xgkdD5oJXFHiWSnbYyPIyCsk6JRahWkC9gHiTaHKifxGqp3FywWIRKnJaYuVAsoVrntfZqw3hQkFiEaqhXgdZoDX0xTGeFbSCx/yrgCxLLw5qfi6EfFMMu47QafoJGszIlFkuv9sfBangD4gRTI/XU+BX4DybCNNC2G2ZaOrWq/IHIB3aFxGJ5+CN4GxSlLtN54gQcgd/hGmhJ1JFwKUhwmNjvyd8IfyP0CVefJRKbi/4FeNBJyWUSp7PGUbgDj2lYIrOWm+8maa7N3HwFO+AG9VtNgX1NJJYHq2AEBE9n8nkbvoa9oF8REhBmDWTaYupJfw4H4BbPOTek2GLpEQ2bAkvHuaDpuFgNv0JTvgYp/xHGg6aSen4XHIP7Ec95h2DqRtpQaoTNtd/I/wxO0VhLpJf2EaimXjloekhkh/lJfgeL3bM8qZ6oAHsF0Lz8BM7SoIIq0nK91xRZMaRCaUieK2skBfYKUEf6U4gt1OU4bn6Snq3Eqal/i/u1UBe3R+MIIi4UD6OgEf7Bt345eJakZxVgmgKK5O1wDGdaO1MxhL6GI/1EPwxan+eSp3ntWRKxJgg0T7V43/W8pHOj32k6vb0JE2AR9AbPkojVeqhor4GbuUDxHKVwo57tkfMjXa+Dbz1PIvYmD5+A2jSHH3/GNMWE00zAOCtYBWe519BrByqWOXcvNZhErHapC+DaRuWvqBZbbG7oU4v+Qt4qyZwtxH+qz4SJtU9EqTYW4Syy3TCx+gbgWzIiGkmreBCO8k5LiVWE22/1Hunh7B7/m2DaktD3wf44ovjwrQ4SexHM7sRtyTDYCtNxYh9cyErfaGMMXrfAJLB79i/Stq4SffKcTOZB0HnVmCppxzoJ6nnfG5JOy7RjTQFtscFe/ZC8n1mFPMF6k3OwD5aB2Yt1aJGDgWBPEZKpmnYstRWMnf3k/WkL9VqldwfDPrA/fZJ8JXaUVidCeMxQoOmgj8eb4QZEffClSuqmf7zshvFgz12vU72DAxV03wfGwgzQxNcQFdsUD1ehFs6Dvg37Dt3kZc0TazJyb1VOWitBh3JTL+Wrfji2IDLv77gXbuiJE9QrNWsAAAAASUVORK5CYII=");
+  background-size: 40rpx;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #5cc017;
+  width: 48px;
+  height: 46px;
+  float: left;
+  margin: 0px 0px 0px 25px;
 }
 
 .line {

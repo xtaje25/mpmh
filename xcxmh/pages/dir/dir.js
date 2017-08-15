@@ -1,7 +1,6 @@
 const config = require('../../config')
 
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -97,5 +96,20 @@ Page({
     wx.navigateTo({
       url: "/pages/details/details?id=" + id + "&st=" + st,
     })
-  }
+  },
+
+  onShareAppMessage: function (res) {
+    var that = this;
+    return {
+      title: that.data.info.f_catalog,
+      desc: that.data.info.f_about,
+      path: '/pages/dir/dir',
+      success: function (res) {
+
+      },
+      fail: function (res) {
+
+      }
+    }
+  },
 })

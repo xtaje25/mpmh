@@ -8,18 +8,22 @@
 </view>
 
 <view wx:if="{{sort>0}}" class="view2">
-  
+  <button class="button2" open-type="share">.</button>
   <button class="button" bindtap="showimg" data-id="{{info.f_id}}" data-st="{{sort}}">续看第{{sort}}章</button>
 </view>
 
-<view class="view3">
+<view class="view6">
   章节
 </view>
 
 <block wx:for="{{list}}" wx:for-item="item" wx:key="item.f_sort">
   <view class="line"></view>
   <navigator url="/pages/details/details?st={{item.f_sort}}&id={{item.f_mhid}}" open-type="navigate">
-    <view class="view3">
+    <view wx:if="{{item.f_sort==sort}}" class="view5">
+      第{{item.f_sort}}章 {{item.f_name}}
+      <image class="img2" src="/image/shihong.png"></image>
+    </view>
+    <view wx:else class="view3">
       第{{item.f_sort}}章 {{item.f_name}}
     </view>
   </navigator>

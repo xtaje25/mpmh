@@ -3,6 +3,16 @@ const config = require('../../config')
 var a = true
 var b = true
 
+function contains(arr, obj) {
+  var i = arr.length;
+  while (i--) {
+    if (arr[i].st === obj.st) {
+      return true;
+    }
+  }
+  return false;
+}
+
 Page({
 
   /**
@@ -27,7 +37,13 @@ Page({
       data: { id: options.id, st: options.st },
       success: function (res) {
         if (res.data.status == 1) {
-          var item = { src: res.data.data.f_img, previous: res.data.data.previous, next: res.data.data.next, mhid: options.id }
+          var item = {
+            src: res.data.data.f_img,
+            previous: res.data.data.previous,
+            next: res.data.data.next,
+            mhid: options.id,
+            st: parseInt(options.st)
+          }
           var newlist = that.data.list
           newlist.push(item)
           that.setData({ list: newlist })
@@ -119,19 +135,28 @@ Page({
           data: { id: that.data.list[0].mhid, st: st },
           success: function (res) {
             if (res.data.status == 1) {
-              var item = { src: res.data.data.f_img, previous: res.data.data.previous, next: res.data.data.next, mhid: mhid }
+              var item = {
+                src: res.data.data.f_img,
+                previous: res.data.data.previous,
+                next: res.data.data.next,
+                mhid: mhid,
+                st: st
+              }
               var newlist = that.data.list
-              newlist.push(item)
-              that.setData({ list: newlist })
+              if (!contains(newlist, item)) {
+                newlist.unshift(item)
+                that.setData({ list: newlist })
 
-              wx.setStorage({
-                key: "sort",
-                data: st
-              })
+                wx.setStorage({
+                  key: "sort",
+                  data: st
+                })
+              }
             }
           },
           complete: function () {
             a = true
+            console.log(that.data.list)
           }
         })
       }
@@ -153,19 +178,28 @@ Page({
           data: { id: that.data.list[len - 1].mhid, st: st },
           success: function (res) {
             if (res.data.status == 1) {
-              var item = { src: res.data.data.f_img, previous: res.data.data.previous, next: res.data.data.next, mhid: mhid }
+              var item = {
+                src: res.data.data.f_img,
+                previous: res.data.data.previous,
+                next: res.data.data.next,
+                mhid: mhid,
+                st: st
+              }
               var newlist = that.data.list
-              newlist.push(item)
-              that.setData({ list: newlist })
+              if (!contains(newlist, item)) {
+                newlist.push(item)
+                that.setData({ list: newlist })
 
-              wx.setStorage({
-                key: "sort",
-                data: st
-              })
+                wx.setStorage({
+                  key: "sort",
+                  data: st
+                })
+              }
             }
           },
           complete: function () {
             b = true
+            console.log(that.data.list)
           }
         })
       }
