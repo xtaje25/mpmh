@@ -51,6 +51,13 @@ Page({
       key: "sort",
       data: options.st
     })
+
+    var that = this;
+    wx.getSystemInfo({
+      success: function (res) {
+        that.setData({ screenHeight: res.windowHeight })
+      }
+    })
   },
 
   /**
@@ -64,12 +71,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var that = this;
-    wx.getSystemInfo({
-      success: function (res) {
-        that.setData({ screenHeight: res.windowHeight })
-      }
-    })
+
   },
 
   /**
@@ -91,6 +93,7 @@ Page({
    */
   onPullDownRefresh: function (e) {
     wx.stopPullDownRefresh()
+    console.log(e);
   },
 
   /**

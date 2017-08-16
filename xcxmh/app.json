@@ -7,7 +7,8 @@
   "window": {
     "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "漫画联盟"
+    "navigationBarTitleText": "漫画联盟",
+    "enablePullDownRefresh": "true"
   },
   "networkTimeout": {
     "request": 120000
