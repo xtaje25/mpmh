@@ -17,9 +17,20 @@
     <button class="buttonleft disabled">下一章</button>
   </block>
 </view>-->
-
-<scroll-view scroll-y style="height:{{screenHeight}}px;" bindscrolltoupper="upper" bindscrolltolower="lower" upper-threshold="50" lower-threshold="1">
-  <block wx:for="{{list}}" wx:for-item="item" wx:key="item.f_sort">
-    <image class="img" src="{{item.src}}" mode="widthFix"></image>
-  </block>
-</scroll-view>
+<view>
+  <scroll-view scroll-into-view="{{intoview}}" scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{screenHeight}}px;" bindscroll="scroll" upper-threshold="2" lower-threshold="2" bindscrolltoupper="upper" bindscrolltolower="lower">
+    <view wx:if="{{ab}}" class="view">
+      已读到第一章
+    </view>
+    <block wx:for="{{list}}" wx:for-item="item" wx:key="item.st">
+      <view class="view2"></view>
+      <view>
+        <image class="img" src="{{item.src}}" mode="widthFix" id="id{{item.st}}"></image>
+      </view>
+      <view class="view2"></view>
+    </block>
+    <view wx:if="{{bb}}" class="view">
+      已读到最后一章
+    </view>
+  </scroll-view>
+</view>

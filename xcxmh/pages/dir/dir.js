@@ -86,19 +86,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
-  },
-
-  showimg: function (e) {
-    var id = e.currentTarget.dataset.id
-    var st = e.currentTarget.dataset.st
-    wx.navigateTo({
-      url: "/pages/details/details?id=" + id + "&st=" + st,
-    })
-  },
-
-  onShareAppMessage: function (res) {
+  onShareAppMessage: function (e) {
     var that = this;
     return {
       title: that.data.info.f_catalog,
@@ -112,4 +100,12 @@ Page({
       }
     }
   },
+
+  showimg: function (e) {
+    var id = e.currentTarget.dataset.id
+    var st = e.currentTarget.dataset.st
+    wx.navigateTo({
+      url: "/pages/details/details?id=" + id + "&st=" + st,
+    })
+  }
 })

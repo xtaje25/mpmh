@@ -1,9 +1,11 @@
 <view class="view">
+
   <view class="viewtext">{{info.f_catalog}}</view>
   <view class="viewtext1">{{info.f_about}}</view>
   <view class="viewtext2">
     <block wx:if="{{info.sort>0}}">更新至第{{info.sort}}章</block>
   </view>
+  <view class="view7"> </view>
   <image class="img" src="{{info.f_logo}}" mode="aspectFill"></image>
 </view>
 

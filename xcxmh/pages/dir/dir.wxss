@@ -61,6 +61,16 @@
   padding: 30rpx 30rpx 30rpx 30rpx;
 }
 
+.view7 {
+  top: 350rpx;
+  position: absolute;
+  width: 100%;
+  height: 250rpx;
+  opacity: 0.1;
+  z-index: 10;
+  background-color: black;
+}
+
 .viewtext {
   position: absolute;
   left: 10rpx;
@@ -68,6 +78,7 @@
   color: white;
   font-size: 36rpx;
   font-family: MicrosoftYaHei;
+  z-index: 100;
 }
 
 .viewtext1 {
@@ -77,6 +88,7 @@
   color: white;
   font-size: 28rpx;
   font-family: MicrosoftYaHei;
+  z-index: 100;
 }
 
 .viewtext2 {
@@ -86,6 +98,7 @@
   color: white;
   font-size: 24rpx;
   font-family: MicrosoftYaHei;
+  z-index: 100;
 }
 
 .button {

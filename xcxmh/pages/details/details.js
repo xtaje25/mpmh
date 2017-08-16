@@ -1,7 +1,6 @@
 const config = require('../../config')
 
-var a = true
-var b = true
+var timeStamp = 0
 
 function contains(arr, obj) {
   var i = arr.length;
@@ -14,16 +13,13 @@ function contains(arr, obj) {
 }
 
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    src: "",
-    previous: 0,
-    next: 0,
-    mhid: 0,
     screenHeight: 0,
+    scrollTop: 0,
+    scrollHeight: 0,
+    intoview: "",
+    ab: false,
+    bb: false,
     list: []
   },
 
@@ -93,21 +89,14 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-
+  onPullDownRefresh: function (e) {
+    wx.stopPullDownRefresh()
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
 
   },
 
@@ -121,15 +110,26 @@ Page({
 
   // 滚动到顶部/左边
   upper: function (e) {
+    if (timeStamp != 0) {
+      if (!(1 < (e.timeStamp - timeStamp) / 1000)) {
+        return
+      } else {
+        timeStamp = e.timeStamp
+      }
+    } else {
+      timeStamp = e.timeStamp
+    }
     var sort = 0
     var that = this
     var len = that.data.list.length
     if (len > 0) {
       var st = that.data.list[0].previous
       var mhid = that.data.list[0].mhid
-      console.log("st:" + st)
-      if (a && st > 0) {
-        a = false
+      if (st > 0) {
+        wx.showLoading({
+          title: "加载上一章",
+          mask: true
+        })
         wx.request({
           url: config.imgInfolUrl,
           data: { id: that.data.list[0].mhid, st: st },
@@ -145,7 +145,7 @@ Page({
               var newlist = that.data.list
               if (!contains(newlist, item)) {
                 newlist.unshift(item)
-                that.setData({ list: newlist })
+                that.setData({ list: newlist, intoview: 'id' + item.next })
 
                 wx.setStorage({
                   key: "sort",
@@ -153,26 +153,45 @@ Page({
                 })
               }
             }
+            wx.hideLoading()
+          },
+          fail: function () {
+            wx.hideLoading()
           },
           complete: function () {
-            a = true
             console.log(that.data.list)
           }
         })
+      }
+
+      if (st == 0) {
+        that.setData({ ab: true })
       }
     }
   },
 
   // 滚动到底部/右边
   lower: function (e) {
+    if (timeStamp != 0) {
+      if (!(1 < (e.timeStamp - timeStamp) / 1000)) {
+        return
+      } else {
+        timeStamp = e.timeStamp
+      }
+    } else {
+      timeStamp = e.timeStamp
+    }
     var sort = 0
     var that = this
     var len = that.data.list.length
     if (len > 0) {
       var st = that.data.list[len - 1].next
       var mhid = that.data.list[len - 1].mhid
-      if (b && st > 0) {
-        b = false
+      if (st > 0) {
+        wx.showLoading({
+          title: "加载下一章",
+          mask: true
+        })
         wx.request({
           url: config.imgInfolUrl,
           data: { id: that.data.list[len - 1].mhid, st: st },
@@ -196,13 +215,26 @@ Page({
                 })
               }
             }
+            wx.hideLoading()
+          },
+          fail: function () {
+            wx.hideLoading()
           },
           complete: function () {
-            b = true
             console.log(that.data.list)
           }
         })
       }
+
+      if (st == 0) {
+        that.setData({ bb: true })
+      }
     }
-  }
+  },
+
+  scroll: function (e) {
+    this.setData({
+      scrollTop: e.detail.scrollTop
+    });
+  },
 })
