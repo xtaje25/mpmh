@@ -1,0 +1,35 @@
+<!--<view>
+  <image class="img" src="{{src}}" mode="widthFix"></image>
+</view>-->
+
+<!--<view>
+  <block wx:if="{{previous>0}}">
+    <button class="buttonleft" bindtap="showimg" data-id="{{mhid}}" data-st="{{previous}}">上一章</button>
+  </block>
+  <block wx:else>
+    <button class="buttonleft disabled">上一章</button>
+  </block>
+
+  <block wx:if="{{next>0}}">
+    <button class="buttonright" bindtap="showimg" data-id="{{mhid}}" data-st="{{next}}">下一章</button>
+  </block>
+  <block wx:else>
+    <button class="buttonleft disabled">下一章</button>
+  </block>
+</view>-->
+
+<view>
+  <view wx:if="{{ab}}" class="view">
+    已读到第一章
+  </view>
+  <block wx:for="{{list}}" wx:for-item="item" wx:key="item.st">
+    <view class="view2"></view>
+    <view>
+      <image class="img" src="{{item.src}}" mode="widthFix" id="id{{item.st}}"></image>
+    </view>
+    <view class="view2"></view>
+  </block>
+  <view wx:if="{{bb}}" class="view">
+    已读到最后一章
+  </view>
+</view>

@@ -2,13 +2,12 @@
   "pages": [
     "pages/dir/dir",
     "pages/details/details",
-    "pages/index/index"
+    "pages/test/test"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "漫画联盟",
-    "enablePullDownRefresh": "true"
+    "navigationBarTitleText": "漫画联盟"
   },
   "networkTimeout": {
     "request": 120000
