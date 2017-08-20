@@ -105,7 +105,7 @@ Page({
     var id = e.currentTarget.dataset.id
     var st = e.currentTarget.dataset.st
     wx.navigateTo({
-      url: "/pages/test/test?id=" + id + "&st=" + st,
+      url: "/pages/details/details?id=" + id + "&st=" + st,
     })
   }
 })

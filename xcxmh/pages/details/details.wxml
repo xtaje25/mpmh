@@ -18,7 +18,7 @@
   </block>
 </view>-->
 <view>
-  <scroll-view scroll-into-view="{{intoview}}" scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{screenHeight}}px;" bindscroll="scroll" upper-threshold="2" lower-threshold="2" bindscrolltoupper="upper" bindscrolltolower="lower">
+  <scroll-view scroll-into-view="{{intoview}}" scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{screenHeight}}px;" bindscroll="scroll" upper-threshold="2" lower-threshold="{{scrollHeight}}" bindscrolltoupper="upper" bindscrolltolower="lower">
     <view wx:if="{{ab}}" class="view">
       已读到第一章
     </view>

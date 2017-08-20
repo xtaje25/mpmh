@@ -19,7 +19,7 @@
 
 <block wx:for="{{list}}" wx:for-item="item" wx:key="item.f_sort">
   <view class="line"></view>
-  <navigator url="/pages/test/test?st={{item.f_sort}}&id={{item.f_mhid}}" open-type="navigate">
+  <navigator url="/pages/details/details?st={{item.f_sort}}&id={{item.f_mhid}}" open-type="navigate">
     <block wx:if="{{item.f_sort==sort}}">
       <view>
         <view class="view3 view5">

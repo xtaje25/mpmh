@@ -24,18 +24,16 @@ var config = {
 
   // 根据漫画id和章节id查询章节详情
   imgInfolUrl: protocol + host + '/api/GetImgInfo',
+  
+  // 第一次加载2张图片
+  imgInfolUrl2: protocol + host + '/api/GetImgInfo2',
 
   // 生成支付订单的接口
   paymentUrl: protocol + host + '/payment',
 
   // 发送模板消息接口
-  templateMessageUrl: protocol + host + '/templateMessage',
+  templateMessageUrl: protocol + host + '/templateMessage'
 
-  // 上传文件接口
-  uploadFileUrl: protocol + host + '/upload',
-
-  // 下载示例图片接口
-  downloadExampleUrl: protocol + host + '/static/weapp.jpg'
 };
 
 module.exports = config

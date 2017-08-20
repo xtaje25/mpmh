@@ -29,19 +29,23 @@ Page({
   onLoad: function (options) {
     var that = this;
     wx.request({
-      url: config.imgInfolUrl,
+      url: config.imgInfolUrl2,
       data: { id: options.id, st: options.st },
       success: function (res) {
         if (res.data.status == 1) {
-          var item = {
-            src: res.data.data.f_img,
-            previous: res.data.data.previous,
-            next: res.data.data.next,
-            mhid: options.id,
-            st: parseInt(options.st)
+          var newlist = []
+          for (var i = 0; i < res.data.data.length; i++) {
+            var item = {
+              src: res.data.data[i].f_img,
+              previous: res.data.data[i].previous,
+              next: res.data.data[i].next,
+              mhid: options.id,
+              st: parseInt(options.st)
+            }
+            newlist = that.data.list
+            newlist.push(item)
+            console.log(newlist);
           }
-          var newlist = that.data.list
-          newlist.push(item)
           that.setData({ list: newlist })
         }
       }
@@ -52,7 +56,6 @@ Page({
       data: options.st
     })
 
-    var that = this;
     wx.getSystemInfo({
       success: function (res) {
         that.setData({ screenHeight: res.windowHeight })
@@ -236,8 +239,10 @@ Page({
   },
 
   scroll: function (e) {
+    var that = this
     this.setData({
-      scrollTop: e.detail.scrollTop
+      scrollTop: e.detail.scrollTop,
+      scrollHeight: e.detail.scrollHeight / that.data.list.length
     });
   },
 })
