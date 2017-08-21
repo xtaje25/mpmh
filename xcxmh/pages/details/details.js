@@ -20,6 +20,8 @@ Page({
     intoview: "",
     ab: false,
     bb: false,
+    loading: false,
+    showarr: [],
     list: []
   },
 
@@ -44,7 +46,6 @@ Page({
             }
             newlist = that.data.list
             newlist.push(item)
-            console.log(newlist);
           }
           that.setData({ list: newlist })
         }
@@ -96,7 +97,6 @@ Page({
    */
   onPullDownRefresh: function (e) {
     wx.stopPullDownRefresh()
-    console.log(e);
   },
 
   /**
@@ -132,9 +132,10 @@ Page({
       var st = that.data.list[0].previous
       var mhid = that.data.list[0].mhid
       if (st > 0) {
-        wx.showLoading({
-          title: "加载上一章",
-          mask: true
+        wx.showToast({
+          title: '上一章',
+          icon: 'loading',
+          duration: 2000
         })
         wx.request({
           url: config.imgInfolUrl,
@@ -159,13 +160,12 @@ Page({
                 })
               }
             }
-            wx.hideLoading()
           },
           fail: function () {
-            wx.hideLoading()
+
           },
           complete: function () {
-            console.log(that.data.list)
+
           }
         })
       }
@@ -194,10 +194,7 @@ Page({
       var st = that.data.list[len - 1].next
       var mhid = that.data.list[len - 1].mhid
       if (st > 0) {
-        wx.showLoading({
-          title: "加载下一章",
-          mask: true
-        })
+        that.setData({ loading: true })
         wx.request({
           url: config.imgInfolUrl,
           data: { id: that.data.list[len - 1].mhid, st: st },
@@ -213,7 +210,7 @@ Page({
               var newlist = that.data.list
               if (!contains(newlist, item)) {
                 newlist.push(item)
-                that.setData({ list: newlist })
+                that.setData({ list: newlist, loading: false })
 
                 wx.setStorage({
                   key: "sort",
@@ -221,13 +218,12 @@ Page({
                 })
               }
             }
-            wx.hideLoading()
           },
           fail: function () {
-            wx.hideLoading()
+            that.setData({ loading: false })
           },
           complete: function () {
-            console.log(that.data.list)
+
           }
         })
       }

@@ -32,5 +32,8 @@
     <view wx:if="{{bb}}" class="view">
       已读到最后一章
     </view>
+    <view wx:if="{{loading}}" class="view">
+      加载中...请稍后
+    </view>
   </scroll-view>
 </view>
